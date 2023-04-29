@@ -1,0 +1,44 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="row">
+    <div class="col-xl-5 col-ig-6 col-md-10 col-sm-12 mx-auto mt-5">
+        <h2>Add homework</h2>
+        {% if message != "" %}
+            <p class="alert alert-success">{{message}}</p>
+        {% endif %}
+        <form method="post" novalidate enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="id_title">hicheel</label>
+                        {{ form.title }}
+                        {{ form.title.errors }}
+                </div>
+                <div class="form-group">
+                    <label for="id_content">aguulga</label>
+                        {{ form.content }}
+                        {{ form.content.errors }}
+                </div>
+                <div class="form-group">
+                    <label for="id_deadline">Duusah hugatsaa</label>
+                            {{ form.deadline }}
+                            {{ form.deadline.errors }}
+                </div>
+                <div class="form-group">
+                    <label for="id_image">zurag</label>
+                    {{ form.image }}
+                    {{ form.image.errors }}
+                </div>
+                <div class="form-group">
+                    <label for="id_lesson">hicheel songoh2</label>
+                    {{ form.lesson }}
+                    {{ form.lesson.errors }}
+                </div>
+                <div class="text-center">
+                    <br><button type="submit" class="btn btn-primary">Geriin daalgavar burtgeh</button>
+                </div> 
+            </div>
+        </form>
+    </div>
+</div>    
+{% endblock %} 
